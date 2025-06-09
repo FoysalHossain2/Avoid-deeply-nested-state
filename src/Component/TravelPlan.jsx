@@ -1,19 +1,25 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
-import {initialTravelPlan} from "../data/places-normalized";
-import PlaceTree from './PlaceTree';
+import { initialTravelPlan } from "../data/places";
+import PlaceTree from "./PlaceTree";
 
 const TravelPlan = () => {
+  const [plan, setPlan] = useState(initialTravelPlan);
 
-    const [plan, setPlan] = useState(initialTravelPlan)
+  const plants = plan.childPlaces;
+
+  console.log(plants);
+  // This component renders the travel plan as a tree structure
 
   return (
     <div>
-        {plan.map((place) =>(
-            <PlaceTree key={place.id} place={place} />
+      <ol>
+        {plants.map((place) => (
+          <PlaceTree key={place.id} place={place} />
         ))}
+      </ol>
     </div>
-  )
-}
+  );
+};
 
-export default TravelPlan
+export default TravelPlan;

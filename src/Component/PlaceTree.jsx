@@ -1,21 +1,18 @@
-import React from 'react'
-
-const PlaceTree = ({place}) => {
-
-    const childPlaces = place.childPlaces;
+const PlaceTree = ({ place }) => {
+  const childPlaces = place.childPlaces;
 
   return (
-    <div>
-        {place.title}
-        {
-            childPlaces.length > 0 && (
-                childPlaces.map((places) => (
-                    <PlaceTree key={place.id} place={place} />
-                ))
-            )
-        }
-    </div>
-  )
-}
+    <li>
+      {place.title}
+      {childPlaces.length > 0 && (
+        <ol>
+          {childPlaces.map((places) => (
+            <PlaceTree key={place.id} place={places} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+};
 
-export default PlaceTree
+export default PlaceTree;
