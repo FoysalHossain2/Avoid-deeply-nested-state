@@ -6,9 +6,9 @@ import PlaceTree from "./PlaceTree";
 const TravelPlan = () => {
   const [plan, setPlan] = useState(initialTravelPlan);
 
-  const plants = plan.childPlaces;
+  const places = plan.childPlaces;
 
-  console.log(plants);
+  console.log(places);
   // This component renders the travel plan as a tree structure
 
   return (
