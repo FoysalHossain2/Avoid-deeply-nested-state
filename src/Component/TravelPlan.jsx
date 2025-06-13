@@ -9,6 +9,7 @@ const TravelPlan = () => {
   const places = plan.childPlaces;
 
   console.log(places);
+  console.log(places);
   // This component renders the travel plan as a tree structure
 
   return (

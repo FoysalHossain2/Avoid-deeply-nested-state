@@ -3,6 +3,7 @@ const PlaceTree = ({ place }) => {
 
   return (
     <li>
+      <h1>djs</h1>
       {place.title}
       {childPlaces.length > 0 && (
         <ol>
